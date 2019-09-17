@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Language Basics</title>
+</head>
+<body>
+    <h1>Практическая работа 2</h1>
+    <p1>Четыре оптические линии связи. Длинна первой - 12км, второй на 20% больше, чем первой, третья и четвёртая равны и имею длинну, равную средней длинны первых двух линий. Волоконная ёмкость каждой линии меньше предыдущей в два раза. (ёмкость первой - 128 волокна). Вычислить вес всех линий связи, если с каждым волокном сто метров кабеля становятся тяжелее на 200гр.. Вывести сообщение вида "самая тяжёлая линия *number* имеет общий вес __, а сто метров используемого кабеля весят __ </p1>
+    <h2>Использовать объекты и функции</h2>
+</body>
+</html>
+<script>
+    function decision(length, capacity) {
+        return (length*200/100)*capacity/1000;
+    }
+    let max = {max: 0, number: '', length: 0};
+    let temp = 0;
+    let line = {
+        one: {length: 12000, capacity: 128},
+        two: {length: 14400, capacity: 64},
+        three: {length: 13200, capacity: 32},
+        four: {length: 13200, capacity: 16},
+    };
+    for (let key in line) {
+      temp = decision(line[key].length, line[key].capacity);
+      if (temp > max.max) {
+        max.max = temp;
+        max.number = key;
+        max.length = line[key].length;
+      }
+    }
+    console.log('самая тяжёлая линия '+max.number+' имеет общий вес '+max.max+', а сто метров используемого кабеля весят '+max.max*100/max.length+' кг.');
+</script>
