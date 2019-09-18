@@ -50,17 +50,20 @@
     $('.player-'+rem+'-panel').removeClass('active');
     $('.player-'+add+'-panel').addClass('active');
     $("#current-"+rem).html('0');
-    $("#score-"+rem).html('0');
   }
   function activehold(rem, add) {
     var curr = $("#current-"+rem).html();
     var sc =  $("#score-"+rem).html();
     $("#score-"+rem).html(Number(curr)+Number(sc));
-    if(sc >= 100)
-      alert('ПОБЕДА !!');
+    if(sc >= 100) {
+        win(rem, add);
+        $("#current-"+rem).html('0');
+    } else {
+     // alert('ПОБЕДА !!');
     $("#current-"+rem).html('0');
     $('.player-'+rem+'-panel').removeClass('active');
     $('.player-'+add+'-panel').addClass('active');
+    }
   }
   function win(rem, add) {
     $('.player-'+rem+'-panel').removeClass('active');

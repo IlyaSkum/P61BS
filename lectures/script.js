@@ -116,7 +116,7 @@ staging area - область подготовленных файлов
 
 i.skumatenko@yandex.ru
 https://learn.javascript.ru/js
-
+https://proglib.io/p/git-for-half-an-hour/
 
 
 
